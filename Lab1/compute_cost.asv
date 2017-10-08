@@ -1,0 +1,8 @@
+function [ beta0, beta1 ] = compute_cost( x, y )
+%COMPUTE_COST Summary of this function goes here
+%   Detailed explanation goes here
+
+
+
+end
+
