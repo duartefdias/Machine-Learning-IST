@@ -7,7 +7,20 @@ clc;
 close all;
 load('data3.mat')
 
-%LS = ((X*(beta)) - Y).^2;
+%Create a beta matrix
+P = 3;
+beta = zeros(50, 3);
 
+%Compute the cost function
+LS = ((X*(beta)) - Y).^2;
+
+%Lasso regression plot with FitInfo.Lambda taken from lasso(X,Y)
 [B, FitInfo] = lasso(X,Y);
 lassoPlot(B, FitInfo,'PlotType', 'Lambda', 'XScale', 'log');
+%FitInfo.Lambda
+%lassoPlot(B, FitInfo,'PlotType', 'Lambda', 'XScale', 'log');
+
+%Alinha 5. -> Ridge regression instead of Lasso regression
+K = 1;
+B1 = ridge(X,Y,K);
+lassoPlot(B1);

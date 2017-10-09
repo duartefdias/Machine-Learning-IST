@@ -1,7 +1,5 @@
 % Made by Francisco Azevedo and Duarte Dias IST, Lisbon
 % Machine Learning LAB1-Linear Regression 12/10/2017
-if Francisco == Retardado
-rnfreionroeorenern
 
 %Cleaning up the workspace and loading data
 clear;
