@@ -11,9 +11,3 @@ load('data3.mat')
 
 [B, FitInfo] = lasso(X,Y);
 lassoPlot(B, FitInfo,'PlotType', 'Lambda', 'XScale', 'log');
-Lambda = 0;
-lassoPlot(B, FitInfo,'PlotType', 'Lambda', 'XScale', 'log');
-
-K = 1;
-B1 = ridge(X,Y,K);
-lassoPlot(B1);
