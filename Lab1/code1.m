@@ -7,7 +7,7 @@ clc;
 close all;
 
 %Data to be SELECTED BY USER
-load('data1.mat');
+load('data2a.mat');
 P = 2;
 
 %Expand original data to match polynomial degree of the used model
@@ -38,6 +38,4 @@ hold on;
 
 %Plots the fitted polynomial
 plot(sorted_x , sorted_y(:,1), '-');
-ylabel('y data');
-xlabel('x data');
-title('fitted polynomial to data');
+ylabel('fitted polynomial');
