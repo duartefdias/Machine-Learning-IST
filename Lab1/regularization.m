@@ -7,26 +7,33 @@ clc;
 close all;
 load('data3.mat')
 
-%Create a beta matrix
-P = 3;
-
-%Compute the cost function (compare with previously obtained LS in code1.m
-%LS = ((X*(beta)) - Y).^2;
-
-%Lasso regression plot with FitInfo.Lambda taken from lasso(X,Y)
+%% Alínea 3 -> Lasso regression plots (coefficients against lambda) with FitInfo.Lambda taken from lasso(X,Y)
 [B, FitInfo] = lasso(X,Y);
 lassoPlot(B, FitInfo,'PlotType', 'Lambda', 'XScale', 'log');
-%FitInfo.Lambda
-%lassoPlot(B, FitInfo,'PlotType', 'Lambda', 'XScale', 'log');
-FitInfo.Lambda(60)
-Blasso=B(:,60);
-Y_0=Blasso(1)*X(:,1)+Blasso(2)*X(:,2)+Blasso(3)*X(:,3);
-figure();
-%hold on;
-plot(Y_0);
-%plot 2o grafico
 
-%Alinha 5. -> Ridge regression instead of Lasso regression
+% Coefficients are 0 at lambda = 60 for X(:,2) so its an irrelevant feature
+FitInfo.Lambda(60)
+Blasso = B(:,60);
+
+
+%% Alínea 4. -> Find Optimal lambda, plot y and fit to data 
+
+% Find optimal lambda
+opt_lambda =
+
+% Creating new X and coefficients w/o irrelevant features
+new_X = vertcat(X(:,1),X(:,3));
+new_beta(1) = B(1,opt_lambda);
+new_beta(2) = B(3,opt_lambda);
+
+Y_0 = new_X*new_beta;
+
+plot(Y_0);
+
+% Plot LS w/o regularization to compare
+figure();
+
+%% Alínea 5. -> Ridge regression instead of Lasso regression
 K = 1;
 B1 = ridge(Y, X,FitInfo.Lambda);
 figure();
