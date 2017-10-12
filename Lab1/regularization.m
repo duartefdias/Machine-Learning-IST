@@ -10,6 +10,15 @@ load('data3.mat');
 %% Alínea 3. -> Lasso regression plot with FitInfo.Lambda taken from lasso(X,Y)
 [B, FitInfo] = lasso(X,Y);
 lassoPlot(B, FitInfo,'PlotType', 'Lambda', 'XScale', 'log');
+ 
+hline1 = refline([0 2.9385]);hold on;
+ 
+hLine1.Color = 'r';
+ 
+hline2 = refline([0 1.425]);hold on;hLine2.Color = 'r';
+ 
+hline3 = refline([0 0.064508]);hold on;hLine3.Color = 'r';
+ 
 
 %% Alínea 4. -> Plot Y and fit to data. Compute cost with and w/o LASSO
 mean_x1 = mean(X(:,1));
