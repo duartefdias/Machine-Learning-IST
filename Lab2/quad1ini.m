@@ -6,7 +6,7 @@ threshold = .01;
 
 maxiter = 1000;
 
-anim = 1;
+anim = 0;
 
 a = 1;
 
