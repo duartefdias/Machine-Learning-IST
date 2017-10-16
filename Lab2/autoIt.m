@@ -1,4 +1,4 @@
-%Este script gera qualquer tabela do lab 2
+%Este script gera qualquer tabela do lab 2 num ficheiro excel
 %Para obter tabelas diferentes basta mudar onde diz "mudar esta funcao"
 %ToDo: aprender a usar alias para os nomes das funções
 columns = [.001 .01 .03 .1 .3 1 3 0;
