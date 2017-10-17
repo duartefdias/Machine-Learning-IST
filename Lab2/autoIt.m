@@ -22,12 +22,25 @@ tablesvalues;
 quad2ini;
 anim = 0;
 for i1 = 1:6
-    for i2 = 1:8          %mudar esta funcao
+    for i2 = 1:8
         a = rows(2, i1);
         eta = columns(2, i2);
-        quad2
+        quad2;
     end
 end
 
+%Exercise 4.3
+disp('Start of exercice 4.3')
+clear;
+tablesvalues;
+rosenini;
+anim = 0;
+for i1 = 1:6
+    for i2 = 1:8
+        a = rows(4, i1);
+        eta = columns(4, i2);
+        rosen;
+    end
+end
 
 
