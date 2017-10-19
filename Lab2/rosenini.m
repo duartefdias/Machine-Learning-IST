@@ -7,10 +7,10 @@ maxiter = 1000;
 
 a = 20;
 
-eta = .001;
-alfa = 0;
-up = 1;
-down = 1;
-reduce = 1;
+eta = 10;
+alfa = .99;
+%up = 1;
+%down = 1;
+%reduce = 1;
 
 anim = 0;
