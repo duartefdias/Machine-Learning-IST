@@ -17,3 +17,8 @@ net.trainParam.epochs = 10000;
 net.trainParam.goal = 0.05;
 
 [net,tr]=train(net,X,T);
+
+x_test = X(:,tr.testInd);
+t_test = T(:,tr.testInd);
+y_test = net(x_test);
+plotconfusion(t_test,y_test);
