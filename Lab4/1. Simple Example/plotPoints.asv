@@ -1,7 +1,0 @@
-load('data1.mat');
-
-for i = 1:150
-    plot(xtest(i, 1), xtest(i+1, 2))
-    hold on
-end
-
