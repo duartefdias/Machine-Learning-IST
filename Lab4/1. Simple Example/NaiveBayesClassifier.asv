@@ -53,9 +53,6 @@ for i = 1:150
     predict3v(i) = normpdf(xtest(1,i), mu(1,3), sd(1,3))*normpdf(xtest(2,i), mu(2,3), sd(2,3))*(1/3);
 end
 
-miss = 0;
-hit = 0;
-
 for i = 1:150
     if predict1v(i) > predict2v(i) && predict1v(i) > predict3v(i)
         result(i) = 1;
@@ -66,16 +63,14 @@ for i = 1:150
     if predict3v(i) > predict1v(i) && predict3v(i) > predict2v(i)
         result(i) = 3;
     end
-    if result(i) ~= ytest(1)
+    if result(i) != ytest(1)
         miss = miss + 1;
     else
         hit = hit +1;
     end
 end
 
- %Error in %
- error = miss/150;
- p(error)
+ error =        
         
         
         
