@@ -1,4 +1,5 @@
 load('data1.mat');
+% To change between test and train plot switch xtest with xtrain
 %Green  -> Class 1
 %Yellow -> Class 2
 %Red    -> Class 3
