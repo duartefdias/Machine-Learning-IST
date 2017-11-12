@@ -1,0 +1,14 @@
+%Gaussian distribution (calculates P(x|teta))
+%sd=variance ; mu=mean
+%y = 1/(2*pi*sd)*exp(-(x-mu).^2/(2*sd^2)) = normpdf()
+
+sd = var(xtrain, 0, 2);
+mu = mean(xtrain, 2);
+
+gauss1 = normpdf(xtrain(1,:), mu(1,1), sd(1,1));
+gauss2 = normpdf(xtrain(2,:), mu(2,1), sd(2,1));
+
+figure;
+plot(xtrain(1,:), gauss1)
+hold on
+plot(xtrain(2,:), gauss2)
