@@ -66,7 +66,7 @@ for i = 1:150
     if predict3v(i) > predict1v(i) && predict3v(i) > predict2v(i)
         result(i) = 3;
     end
-    if result(i) ~= ytest(1)
+    if result(i) ~= ytest(i)
         miss = miss + 1;
     else
         hit = hit +1;
@@ -75,7 +75,7 @@ end
 
  %Error in %
  error = miss/150;
- p(error)
+ disp(error)
         
         
         
