@@ -54,6 +54,7 @@
 			% Add here any initialization code that is to be performed once for each language, before the loop on trigrams.
 			%
 			% This is Code Section 1
+            scores(languageindex) = 0;
 			% ***************************************************************************************************************
 			
 			for trigramindex = 1:numel(text)-2;					% Loop through all the trigrams of the input text
@@ -71,6 +72,7 @@
 				% Add here any code that is to be executed once for each trigram.
 				%
 				% This is Code Section 2
+                scores(languageindex) = scores(languageindex) + trigramcount;
 				% *****************************************************************
 				
 			end		% The loop on trigrams ends here
@@ -82,6 +84,7 @@
 			% scores(languageindex) = <expression>
 			%
 			% This is Code Section 3
+            scores(languageindex) = scores(languageindex)/total_counts(languageindex);
 			% *******************************************************************************************************************
 			
 		end			% The loop on languages ends here
