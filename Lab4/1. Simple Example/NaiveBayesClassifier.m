@@ -43,18 +43,11 @@ disp('winner is 2 MOFOS!')
 
 for i = 1:150
     predict1v(i) = normpdf(xtest(1,i), mu(1,1), sd(1,1))*normpdf(xtest(2,i), mu(2,1), sd(2,1))*(1/3);
-end
-
-for i = 1:150
     predict2v(i) = normpdf(xtest(1,i), mu(1,2), sd(1,2))*normpdf(xtest(2,i), mu(2,2), sd(2,2))*(1/3);
-end
-
-for i = 1:150
     predict3v(i) = normpdf(xtest(1,i), mu(1,3), sd(1,3))*normpdf(xtest(2,i), mu(2,3), sd(2,3))*(1/3);
 end
 
 miss = 0;
-hit = 0;
 
 for i = 1:150
     if predict1v(i) > predict2v(i) && predict1v(i) > predict3v(i)
@@ -68,13 +61,12 @@ for i = 1:150
     end
     if result(i) ~= ytest(i)
         miss = miss + 1;
-    else
-        hit = hit +1;
     end
 end
 
  %Error in %
  error = miss/150;
+ disp('calculated error is:')
  disp(error)
         
         
