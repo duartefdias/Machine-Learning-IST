@@ -1,17 +1,5 @@
-%Gaussian distribution (calculates P(x|teta))
 %sd=variance ; mu=mean
 %y = 1/(2*pi*sd)*exp(-(x-mu).^2/(2*sd^2)) = normpdf()
-
-% %Calculation of P(x|teta1) - NOT what is needed
-% gauss1 = normpdf(xtrain(1,:), mu(1,1), sd(1,1));
-% %Calculation of P(x|teta2) - NOT what is needed
-% gauss2 = normpdf(xtrain(2,:), mu(2,1), sd(2,1));
-
-% %Visualize the result
-% figure;
-% plot(xtrain(1,:), gauss1)
-% hold on
-% plot(xtrain(2,:), gauss2)
 
 %Calculating the sd and mean for every class and every feature
 sd = ones(2,3);
@@ -31,15 +19,16 @@ end
 
 %Example: lets predict the prob of an example belonging to class 1
 %The math is just multiplying p(x1|C1)*p(x2|C1)*P(C1)
+%Probability of the element being of class 3:
 predict1 = normpdf(xtest(1,70), mu(1,1), sd(1,1))*normpdf(xtest(2,70), mu(2,1), sd(2,1))*(1/3)
 
-%Class 2?
+%Probability of the element being of class 3:
 predict2 = normpdf(xtest(1,70), mu(1,2), sd(1,2))*normpdf(xtest(2,70), mu(2,2), sd(2,1))*(1/3)
 
-%HOW ABOUT 3 YOU MOFOS?
+%Probability of the element being of class 3:
 predict3 = normpdf(xtest(1,70), mu(1,3), sd(1,3))*normpdf(xtest(2,70), mu(2,3), sd(2,3))*(1/3)
 
-disp('winner is 2 MOFOS!')
+disp('This element is of class 2')
 
 for i = 1:150
     predict1v(i) = normpdf(xtest(1,i), mu(1,1), sd(1,1))*normpdf(xtest(2,i), mu(2,1), sd(2,1))*(1/3);
