@@ -1,4 +1,3 @@
 load('data1.mat');
-NaiveBayesClassifier();
 
-histogram(result);
+bar(result, 'b')
