@@ -1,0 +1,18 @@
+% Code developed by Francisco Azevedo and Duarte Dias at IST,Lisbon 2017
+% Developed for the Lab evaluation of Machine Learning course
+load('spiral.mat');
+
+% Trainiing the SVM and plotting results
+svmStruct = svmtrain(X,Y,'method','QP','kernel_function','polynomial','polyorder',1,'ShowPlot',true);
+
+
+% Calculating error percentages
+error_cnt = 0;
+
+for i = 1:length(Y)
+    if(svmStruct.GroupNames ~= Y(i))
+        error_count = error_count + 1;
+    end
+end
+
+classification_error = (error_count/length(Y))*100;
