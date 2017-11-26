@@ -1,10 +1,13 @@
 % Code developed by Francisco Azevedo and Duarte Dias at IST,Lisbon 2017
 % Developed for the Lab evaluation of Machine Learning course
 clear;
-load('spiral.mat');
 
+% Change file name here to change between 4.1-4.5
+load('chess33n.mat');
+
+% Change parameters here to change between 4.1-4.5
 % Trainiing the SVM and plotting results
-svmStruct = svmtrain(X,Y,'method','QP','kernel_function','polynomial','polyorder',7,'ShowPlot',true);
+svmStruct = svmtrain(X,Y,'method','QP','kernel_function','rbf','rbf_sigma',1, 'boxconstraint', 10 ,'ShowPlot',true);
 
 classification = svmclassify(svmStruct,X,'ShowPlot',true);
 
