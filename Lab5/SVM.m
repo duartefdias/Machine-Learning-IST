@@ -7,7 +7,7 @@ load('chess33n.mat');
 
 % Change parameters here to change between 4.1-4.5
 % Trainiing the SVM and plotting results
-svmStruct = svmtrain(X,Y,'method','QP','kernel_function','rbf','rbf_sigma',1, 'boxconstraint', 1000000 ,'ShowPlot',true);
+svmStruct = svmtrain(X,Y,'method','QP','kernel_function','rbf','rbf_sigma',1, 'boxconstraint', 100 ,'ShowPlot',true);
 
 classification = svmclassify(svmStruct,X,'ShowPlot',true);
 
